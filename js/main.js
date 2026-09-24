@@ -154,8 +154,34 @@ function initReveal() {
   els.forEach((el) => observer.observe(el));
 }
 
+/* ---------- 交互：浅色 / 深色主题切换 ---------- */
+const THEME_KEY = "preferred-theme";
+
+function applyTheme(theme) {
+  document.documentElement.dataset.theme = theme;
+  const btn = $("#themeToggle");
+  if (!btn) return;
+  const isDark = theme === "dark";
+  btn.setAttribute("aria-pressed", String(isDark));
+  btn.setAttribute("aria-label", isDark ? "切换到浅色主题" : "切换到深色主题");
+}
+
+function initTheme() {
+  // 优先使用用户上次的选择，否则跟随系统偏好
+  const saved = localStorage.getItem(THEME_KEY);
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  applyTheme(saved === "dark" || saved === "light" ? saved : prefersDark ? "dark" : "light");
+
+  $("#themeToggle").addEventListener("click", () => {
+    const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+    localStorage.setItem(THEME_KEY, next);
+    applyTheme(next);
+  });
+}
+
 /* ---------- 启动 ---------- */
 document.addEventListener("DOMContentLoaded", () => {
+  initTheme();
   renderProfile();
   renderAbout();
   renderFilters();
