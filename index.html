@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>小和 · 个人作品集</title>
+  <meta name="description" content="小和的个人作品集：项目作品、技能方向与基本信息。" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ==================== 左侧信息栏（桌面端固定，移动端置顶） ==================== -->
+  <aside class="sidebar">
+    <div class="profile">
+      <img class="avatar js-avatar" src="" alt="头像" />
+      <h1 class="name js-name">—</h1>
+      <p class="role js-role">—</p>
+    </div>
+
+    <p class="bio js-bio">—</p>
+
+    <nav class="nav" aria-label="页面导航">
+      <a class="nav-link is-active" href="#top"><span class="nav-index">00</span>首页</a>
+      <a class="nav-link" href="#projects"><span class="nav-index">01</span>项目作品</a>
+      <a class="nav-link" href="#about"><span class="nav-index">02</span>关于我</a>
+      <a class="nav-link" href="#contact"><span class="nav-index">03</span>基本信息</a>
+    </nav>
+
+    <!-- 技能分组由 JS 根据 data.js 渲染 -->
+    <div class="skills" id="skills"></div>
+
+    <div class="sidebar-foot">
+      <p class="copyright">© <span class="js-year">2026</span> <span class="js-name">—</span></p>
+    </div>
+  </aside>
+
+  <!-- ==================== 右侧主内容 ==================== -->
+  <main class="content">
+
+    <!-- 首屏 -->
+    <section class="hero" id="top">
+      <p class="hero-kicker js-kicker reveal">PORTFOLIO</p>
+      <h2 class="hero-title reveal">—</h2>
+      <p class="hero-lead js-hero-lead reveal">—</p>
+      <ul class="hero-meta reveal">
+        <li>
+          <span class="meta-label">坐标</span>
+          <span class="meta-value js-location">—</span>
+        </li>
+        <li>
+          <span class="meta-label">状态</span>
+          <span class="meta-value js-status">—</span>
+        </li>
+        <li>
+          <span class="meta-label">专业</span>
+          <span class="meta-value js-major">—</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 项目作品：列表由 JS 根据 data.js 渲染，新增项目只需改 data.js -->
+    <section class="section" id="projects">
+      <header class="section-head reveal">
+        <span class="section-index">01</span>
+        <h2 class="section-title">项目作品</h2>
+        <span class="section-desc">Selected Works</span>
+      </header>
+      <div class="filters" id="filters" role="group" aria-label="项目分类筛选"></div>
+      <div class="project-list" id="projectList"></div>
+    </section>
+
+    <!-- 关于我 -->
+    <section class="section" id="about">
+      <header class="section-head reveal">
+        <span class="section-index">02</span>
+        <h2 class="section-title">关于我</h2>
+        <span class="section-desc">About Me</span>
+      </header>
+
+      <div class="about-text js-about-text reveal"></div>
+    </section>
+
+    <!-- 基本信息 -->
+    <section class="section" id="contact">
+      <header class="section-head reveal">
+        <span class="section-index">03</span>
+        <h2 class="section-title">基本信息</h2>
+        <span class="section-desc">Basic Info</span>
+      </header>
+
+      <h3 class="contact-title reveal">
+        感谢浏览我的作品集，<br /><em>欢迎交流与指导。</em>
+      </h3>
+
+      <ul class="contact-list reveal">
+        <li>
+          <span class="contact-label">专业</span>
+          <span class="contact-value js-major">—</span>
+        </li>
+        <li>
+          <span class="contact-label">坐标</span>
+          <span class="contact-value js-location">—</span>
+        </li>
+        <li>
+          <span class="contact-label">状态</span>
+          <span class="contact-value js-status">—</span>
+        </li>
+      </ul>
+    </section>
+
+    <footer class="footer">
+      <p>© <span class="js-year">2026</span> <span class="js-name">—</span></p>
+      <p>Built with 原生 HTML / CSS / JavaScript</p>
+    </footer>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
